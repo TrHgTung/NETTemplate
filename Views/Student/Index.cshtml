@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IQueryable<Student>
+
+<div class="text-center">
+    <h1 class="display-4">Tat ca sinh vien</h1>
+    <ul class="list-group">
+        @foreach (var item in Model ?? Enumerable.Empty<Student>())
+        {
+            <li class="list-group-item"><strong>Ho Sinh vien @item.Id</strong> @item.FirstName</li>
+            <li class="list-group-item"><strong>Ten Sinh vien @item.Id </strong>@item.LastName</li>
+            <li class="list-group-item"><strong>Ngay sinh Sinh vien @item.Id </strong>@item.Birthday</li>
+            <li class="list-group-item"><strong>Gioi tinh Sinh vien @item.Id </strong>@item.Gender</li>
+        }
+    </ul>
+ 
+    <div class="mt-4">
+        Phan trang
+        <a asp-controller="Student" asp-action="Pagnition" asp-route-id="1">1</a>
+        <a asp-controller="Student" asp-action="Pagnition" asp-route-id="2">2</a>
+        <a asp-controller="Student" asp-action="Pagnition" asp-route-id="3">3</a>
+    </div>
+</div>

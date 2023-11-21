@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Student Display";
+}
+@model IQueryable<Student>
+
+<div class="text-center">
+    <h1 class="display-4">Phan trang</h1>
+    <ul class="list-group">
+        @foreach (var item in Model ?? Enumerable.Empty<Student>())
+        {
+            <li class="list-group-item">@item.FirstName</li>
+            <li class="list-group-item">@item.LastName</li>
+            <li class="list-group-item">@item.Birthday</li>
+            <li class="list-group-item">@item.Gender</li>
+        }
+    </ul>
+</div>
